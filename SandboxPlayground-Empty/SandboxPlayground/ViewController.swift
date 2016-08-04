@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        appDelegate?.sandboxPlayground()
+        
     }
 
     override func didReceiveMemoryWarning() {
