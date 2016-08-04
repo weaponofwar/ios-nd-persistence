@@ -25,6 +25,13 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sliderView.continuous = false
+        
+        if let value = NSUserDefaults.standardUserDefaults().valueForKey("SliderValue") as? Float {
+            sliderView.value = value
+        } else {
+            //do nothing
+        }
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
@@ -98,5 +105,6 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func sliderDidMove(sender: UISlider) {
         print("Slider vaue: \(sliderView.value)")
+        NSUserDefaults.standardUserDefaults().setValue(sliderView.value, forKey: "SliderValue")
     }
 }

@@ -54,7 +54,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         } catch _ {
         }
         audioRecorder.delegate = self
-        audioRecorder.meteringEnabled = true;
+        audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
 
         audioRecorder.record()
@@ -84,7 +84,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func stopAudio(sender: UIButton) {
         recordingInProgress.hidden = true
         audioRecorder.stop()
-        let audioSession = AVAudioSession.sharedInstance();
+        let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setActive(false)
         } catch _ {
